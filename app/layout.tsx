@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Source_Sans_3 as Source_Sans_Pro } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://gobi-portfolio.vercel.app",
-    title: "Gobi - Cyberpunk Portfolio",
-    description: "Innovative Computer & Communication Engineering student portfolio",
+    title: "Gobi - Portfolio",
+    description: "portfolio",
     siteName: "Gobi Portfolio",
   },
   twitter: {
@@ -60,6 +61,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${sourceSans.variable} antialiased bg-cyber-black text-cyber-blue overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   )
